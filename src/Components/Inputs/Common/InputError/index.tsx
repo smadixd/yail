@@ -3,8 +3,14 @@ import { FC } from "react";
 
 import { IInputErrorProps } from "./types";
 
-const InputError: FC<IInputErrorProps> = ({ error, className }) => {
-  const baseClassName = "yl-text-rose-500 peer-invalid:yl-visible yl-mb-4";
+const InputError: FC<IInputErrorProps> = (
+  { error, className } = {
+    error: "",
+    className: ""
+  }
+) => {
+  const baseClassName =
+    "yl-text-rose-500 peer-invalid:yl-visible yl-my-1 yl-block";
 
   if (Array.isArray(error)) {
     return error.map((e, i) => {
@@ -27,11 +33,6 @@ const InputError: FC<IInputErrorProps> = ({ error, className }) => {
   }
 
   return <span className={classNames(baseClassName, className)}>{error}</span>;
-};
-
-InputError.defaultProps = {
-  error: "",
-  className: ""
 };
 
 export default InputError;
