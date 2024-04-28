@@ -1,5 +1,6 @@
 export { default as AsyncSelect } from "./AsyncSelect";
 export { default as Checkbox } from "./Checkbox";
+export { default as RadioGroup } from "./RadioGroup";
 export { default as InputError } from "./Common/InputError";
 export { default as InputHeader } from "./Common/InputHeader";
 export { default as DomainInput } from "./DomainInput";
