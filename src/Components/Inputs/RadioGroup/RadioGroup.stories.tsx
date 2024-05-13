@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { action } from "@storybook/addon-actions";
 import { useState } from "react";
 
@@ -15,6 +16,13 @@ export default {
   }
 };
 
+const dummyRadios = Array(5)
+  .fill(0)
+  .map(() => ({
+    value: Math.floor(Math.random() * 1000000),
+    label: faker.lorem.words(Math.floor(Math.random() * 10) + 1)
+  }));
+
 export const Default = () => {
   const [value, setValue] = useState<OptionValue>(1);
   return (
@@ -24,11 +32,7 @@ export const Default = () => {
         setValue(value);
         action("onChange")(value);
       }}
-      options={[
-        { value: 1, label: "Option 1" },
-        { value: 2, label: "Option 2" },
-        { value: 3, label: "Option 3" }
-      ]}
+      options={dummyRadios}
     />
   );
 };

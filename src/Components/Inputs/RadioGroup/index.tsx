@@ -31,7 +31,7 @@ const RadioGroup: FC<IRadioGroup> = (
         {options?.map((option, index) => (
           <label
             className='label yl-flex yl-cursor-pointer yl-items-center yl-gap-2'
-            key={`${index}`}
+            key={index}
           >
             <input
               type='radio'
